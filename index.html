@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield - Защита от мошенников</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="background-effects">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="app-container glass-panel">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="icon">🛡️</span>
+                <h1>ScamShield</h1>
+            </div>
+
+            <div class="controls">
+                <!-- Language Toggle -->
+                <div class="lang-switch glass-element">
+                    <button class="lang-btn active" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="kk">KK</button>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="btn-icon glass-btn" aria-label="Toggle theme">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+
+                <!-- Logout -->
+                <button id="logout-btn" class="logout-btn glass-btn" title="Выйти">
+                    <span class="icon-logout">🚪</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content chat-layout">
+
+            <div id="chat-history" class="chat-history">
+                <!-- Welcome Message is injected by JS -->
+            </div>
+
+            <div class="chat-input-area glass-element">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Введите сообщение..."
+                        data-i18n-placeholder="chat_placeholder" rows="1"></textarea>
+                    <button id="send-btn" class="btn-send" aria-label="Send">
+                        <span class="icon-send">➤</span>
+                    </button>
+                </div>
+                <p id="error-message" class="error-message hidden"></p>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 ScamShield. <span data-i18n="footer_text">Ваша безопасность — наш приоритет.</span></p>
+        </footer>
+
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/firebase-config.js" type="module"></script>
+    <script src="js/auth.js" type="module"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/ai-analyzer.js" type="module"></script>
+</body>
+
+</html>
